@@ -1,0 +1,66 @@
+{
+  "name": "tw-proiect-front",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "nextjs",
+    "tailwindcss",
+    "starter"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": "^22.11.0",
+    "npm": "^10.9.0"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
+    "@tailwindcss/forms": "^0.5.2",
+    "@tailwindcss/typography": "^0.5.4",
+    "@tanstack/react-query": "^5.85.5",
+    "@tanstack/react-table": "^8.21.3",
+    "accounting": "^0.4.1",
+    "autoprefixer": "10.4.5",
+    "axios": "^1.8.4",
+    "date-fns": "^2.21.1",
+    "dotenv": "^16.0.1",
+    "downshift": "^6.1.12",
+    "js-cookie": "^3.0.5",
+    "js-file-download": "^0.4.12",
+    "jsonwebtoken": "^9.0.0",
+    "lodash": "^4.17.21",
+    "merge-class-names": "^1.4.2",
+    "next": "^15.2.4",
+    "pino": "^8.4.0",
+    "query-string": "^7.0.0",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.2",
+    "react-calendar": "^6.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.62.0",
+    "react-hot-toast": "^2.4.0",
+    "redux": "^4.1.0",
+    "store2": "^2.14.2",
+    "tailwindcss": "^3.3.3",
+    "uuid": "^9.0.1",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@tanstack/react-query-devtools": "^5.85.5",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "pino-pretty": "^4.7.1",
+    "postcss": "^8.4.31",
+    "prettier": "^3.6.2"
+  }
+}
