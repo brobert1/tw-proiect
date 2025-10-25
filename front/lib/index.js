@@ -7,3 +7,4 @@ export { default as formCookie } from './form-cookie';
 export { default as logger } from './logger';
 export { default as router } from './router';
 export { default as toaster } from './toaster';
+export { cn } from './utils';
