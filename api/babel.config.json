@@ -1,0 +1,16 @@
+{
+  "presets": ["@babel/preset-env"],
+  "ignore": ["**/node_modules/**"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "@functions": "./functions",
+          "@middleware": "./middleware"
+        }
+      }
+    ]
+  ]
+}

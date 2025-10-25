@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@functions": ["./functions/index.js"],
+      "@functions/*": ["./functions/*"],
+      "@middleware": ["./middleware/index.js"],
+      "@middleware/*": ["./middleware/*"]
+    }
+  }
+}
