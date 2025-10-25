@@ -9,8 +9,7 @@ Aplicație full-stack construită cu Node.js, Express, PostgreSQL și Next.js + 
 - [Configurare Backend (API)](#configurare-backend-api)
 - [Configurare Frontend](#configurare-frontend)
 - [Rularea aplicației](#rularea-aplicației)
-- [Autentificare](#autentificare)
-- [Unde să începi](#unde-să-începi)
+
 
 ## 🔧 Cerințe de sistem
 
@@ -90,7 +89,6 @@ npm run dev
 
 Serverul backend va porni pe portul **9000**: `http://localhost:9000`
 
-
 ## 🎨 Configurare Frontend
 
 ### Pasul 1: Instalare dependențe
@@ -116,23 +114,25 @@ cp .env.example .env
 npm run dev
 ```
 
-Serverul frontend va porni pe portul **8080**: `http://localhost:8080`
+Serverul frontend va porni pe portul **3000**: `http://localhost:3000`
 
 ## 🚀 Rularea aplicației
 
 1. **Terminal 1** - Pornește backend-ul:
+
    ```bash
    cd api
    npm run dev
    ```
 
 2. **Terminal 2** - Pornește frontend-ul:
+
    ```bash
    cd front
    npm run dev
    ```
 
-3. Deschide browser-ul la: `http://localhost:8080`
+3. Deschide browser-ul la: `http://localhost:3000`
 
 4. Te poți conecta ca:
    - **Organizer** (organizator)
