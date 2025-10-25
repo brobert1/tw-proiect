@@ -1,0 +1,23 @@
+export async function up(knex) {
+  await knex.schema.raw('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"');
+
+  await knex.schema.createTable('identities', (table) => {
+    table.uuid('id').notNullable().primary().defaultTo(knex.raw('uuid_generate_v4()'));
+    table.string('email').notNullable();
+    table.string('name').notNullable();
+    table.enum('role', ['organizer', 'reviewer', 'author']).notNullable().defaultTo('author');
+    table.string('password').notNullable();
+    table.integer('loginAttempts').defaultTo(0);
+    table.bool('active').defaultTo(false);
+    table.timestamp('last_login_at');
+    table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
+    table.timestamp('updated_at');
+
+    table.index('email');
+    table.unique('email');
+  });
+}
+
+export async function down(knex) {
+  await knex.schema.dropTable('identities');
+}

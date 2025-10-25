@@ -5,27 +5,35 @@
   "scripts": {
     "build": "node npm.js build",
     "dev": "node npm.js dev",
+    "seed": "node npm.js seed",
     "start": "node npm.js build && node npm.js start",
     "test": "node npm.js test"
   },
-  "keywords": [
-    "express",
-    "api",
-    "starter",
-    "nodejs"
-  ],
   "license": "MIT",
   "engines": {
     "node": "^22.11.0 || ^20",
     "npm": "^10.9.0 || ^10"
   },
   "dependencies": {
+    "axios": "^1.8.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
+    "date-fns": "^2.23.0",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
+    "express-fileupload": "^1.4.0",
+    "express-slow-down": "^1.5.0",
     "helmet": "^5.1.1",
-    "pino": "^6.13.1"
+    "jsonwebtoken": "^9.0.0",
+    "knex": "^2.3.0",
+    "lodash": "^4.17.21",
+    "pg": "^8.7.1",
+    "pino": "^6.13.1",
+    "uuid": "^8.3.2",
+    "validator": "^13.6.0",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "@babel/cli": "^7.24.1",
@@ -42,4 +50,3 @@
     "prettier": "^2.3.2"
   }
 }
-

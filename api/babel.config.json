@@ -6,9 +6,19 @@
       "module-resolver",
       {
         "root": ["./"],
-        "alias": {
+          "alias": {
+          "@controllers": "./controllers",
+          "@data": "./data",
+          "@db": "./db",
           "@functions": "./functions",
-          "@middleware": "./middleware"
+          "@middleware": "./middleware",
+          "@models": "./models",
+          "@plugins": "./plugins",
+          "@postman": "./postman",
+          "@routes": "./routes",
+          "@schemas": "./schemas",
+          "@scripts": "./scripts",
+          "@tests": "./tests"
         }
       }
     ]

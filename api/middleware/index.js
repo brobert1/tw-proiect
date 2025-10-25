@@ -1,2 +1,8 @@
+export { default as authenticate } from './authenticate';
+export { default as authorize } from './authorize';
 export { default as errorHandler } from './error-handler';
 export { default as notFound } from './not-found';
+export { default as speedLimiter } from './speed-limiter';
+export { default as status } from './status';
+export { default as userExists } from './user-exists';
+export { default as userNotExist } from './user-not-exist';

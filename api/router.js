@@ -1,29 +1,24 @@
+import * as routes from '@routes';
 import { Router } from 'express';
-import { errorHandler, notFound } from './middleware';
+import { authenticate, errorHandler, notFound, status } from './middleware';
 
 const router = Router();
+export default router;
 
-// Health check route
-router.get('/health', (req, res) => {
-  res.json({
-    status: 'OK',
-    message: 'Server is running',
-    timestamp: new Date().toISOString()
-  });
-});
+// Protect all non-public routes
+router.all('/admin', authenticate);
+router.all('/admin/*', authenticate);
 
-// API routes
-router.get('/api', (req, res) => {
-  res.json({
-    message: 'Welcome to the API',
-    version: '1.0.0'
-  });
-});
+// Useful middleware for testing
+router.use(status.loading);
+router.use(status.error);
 
-// 404 handler
+// Use the router instances defined
+router.use(routes.identity);
+// example routes removed — use the app's routes in `routes/`
+
+// Matches any other HTTP method and route not matched before
 router.all('*', notFound);
 
-// Error handler
+// Finally, an error handler
 router.use(errorHandler);
-
-export default router;
