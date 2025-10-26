@@ -8,12 +8,16 @@
       "@db/*": ["./db/*"],
       "@functions": ["./functions/index.js"],
       "@functions/*": ["./functions/*"],
+      "@lib": ["./lib/index.js"],
+      "@lib/*": ["./lib/*"],
       "@middleware": ["./middleware/index.js"],
       "@middleware/*": ["./middleware/*"],
       "@routes": ["./routes/index.js"],
       "@routes/*": ["./routes/*"],
       "@schemas": ["./schemas/index.js"],
-      "@schemas/*": ["./schemas/*"]
+      "@schemas/*": ["./schemas/*"],
+      "@plugins": ["./plugins/index.js"],
+      "@plugins/*": ["./plugins/*"]
     }
   }
 }
