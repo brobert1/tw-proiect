@@ -1,13 +1,16 @@
-import { Link } from '@components';
 import { sitename } from '@site.config';
 
 const Logo = () => {
   return (
-    <Link href="/">
-      <div className="logo mb-12 flex cursor-pointer items-start">
-        <img src="/images/logo.png" alt={sitename} />
+    <div className="flex items-center gap-2">
+      <div className="flex h-8 w-8 items-center justify-center rounded-md bg-text-primary">
+        <span className="text-lg font-bold text-white">A</span>
       </div>
-    </Link>
+      <div className="flex flex-col">
+        <span className="text-sm font-semibold text-text-primary">{sitename}</span>
+        <span className="text-xs text-text-tertiary">Enterprise</span>
+      </div>
+    </div>
   );
 };
 

@@ -43,11 +43,19 @@ module.exports = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+  			// Minimalist SaaS Dashboard Design System
+  			'sidebar-bg': '#F9FAFB',
+  			'content-bg': '#FFFFFF',
+  			'interactive-bg': '#F3F4F6',
+  			'text-primary': '#111827',
+  			'text-secondary': '#6B7280',
+  			'text-tertiary': '#9CA3AF',
+  			'border-primary': '#E5E7EB'
   		},
   		fontFamily: {
   			display: 'Libre Baskerville, Arial, sans-serif',
-  			body: 'Noto Sans JP, Arial, sans-serif'
+  			body: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -64,7 +72,6 @@ module.exports = {
     require('@tailwindcss/forms')({
       strategy: 'class',
     }),
-    require('@tailwindcss/typography'),
-      require("tailwindcss-animate")
+    require('@tailwindcss/typography')
 ],
 };

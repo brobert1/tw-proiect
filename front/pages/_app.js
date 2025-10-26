@@ -1,4 +1,4 @@
-import { ErrorBoundary, ScreenSizeInfo, Toaster } from '@components';
+import { ErrorBoundary, Toaster } from '@components';
 import { queryClientConfig } from '@constants/query-client';
 import { sitename } from '@site.config';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -21,7 +21,6 @@ const Root = (props) => {
           <Component {...pageProps} />
         </QueryClientProvider>
         <Toaster />
-        <ScreenSizeInfo />
       </ErrorBoundary>
     </>
   );
