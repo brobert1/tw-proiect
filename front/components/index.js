@@ -27,6 +27,7 @@ export { default as ProfileMenu } from './ProfileMenu';
 export { default as ProfileSuccess } from './ProfileSuccess';
 export { default as ReviewerMenu } from './ReviewerMenu';
 export { default as ScreenSizeInfo } from './ScreenSizeInfo';
+export { default as StepIndicator } from './StepIndicator';
 export { default as Toaster } from './Toaster';
 export { default as TranslateAll } from './TranslateAll';
 export { default as withRouter } from './withRouter';

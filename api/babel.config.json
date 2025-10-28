@@ -19,7 +19,8 @@
           "@routes": "./routes",
           "@schemas": "./schemas",
           "@scripts": "./scripts",
-          "@tests": "./tests"
+          "@tests": "./tests",
+          "@crons": "./cron"
         }
       }
     ]

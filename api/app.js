@@ -27,4 +27,7 @@ app.use(speedLimiter);
 // route everything
 app.use(router);
 
+// Cron jobs (auto-start on import)
+import '@crons/update-conference-statuses';
+
 export default app;

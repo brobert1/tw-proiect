@@ -1,14 +1,5 @@
 import { MenuItem } from '@components';
-import {
-  LayoutDashboard,
-  Calendar,
-  Plus,
-  Users,
-  FileText,
-  Settings,
-  BarChart,
-  Mail,
-} from 'lucide-react';
+import { LayoutDashboard, Calendar, Users, FileText, Settings, BarChart, Mail } from 'lucide-react';
 
 const OrganizerMenu = () => {
   return (
@@ -22,10 +13,7 @@ const OrganizerMenu = () => {
             Dashboard
           </MenuItem>
           <MenuItem href="/organizer/conferences" icon={Calendar} level="1">
-            My Conferences
-          </MenuItem>
-          <MenuItem href="/organizer/create" icon={Plus} level="1">
-            Create Conference
+            Conferences
           </MenuItem>
         </nav>
       </section>

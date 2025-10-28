@@ -1,3 +1,5 @@
 import { axiosAuth } from '@lib';
 
-// Organizer-specific API calls will go here
+export const createConference = (data) => {
+  return axiosAuth.post('organizer/create-conference', data);
+};
