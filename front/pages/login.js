@@ -26,9 +26,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      {/* Right side: show a full-cover conference image (fills the entire right panel). */}
       <div className="hidden lg:flex flex-1 border-l border-border-primary bg-sidebar-bg relative overflow-hidden">
-        {/* Image is served from /images/conference.jpg (place file at front/public/images/conference.jpg) */}
         <img
           src="/images/conference.jpg"
           alt="conference"
