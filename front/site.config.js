@@ -1,12 +1,9 @@
 module.exports = {
-  sitename: 'Your Awesome App',
-  title: 'Your Awesome App',
-  description: `
-  Starter template for React and Next.js projects packed with features like authentication,
-  custom hooks, Tailwind support and many more.
-  `,
+  sitename: 'ConfEra',
+  title: 'ConfEra',
+  description: `The new era of conference organization`,
   baseurl: `${process.env.APP_BASE_URL}`,
-  image: `${process.env.APP_BASE_URL}/images/logo.png`,
+  image: `${process.env.APP_BASE_URL}/images/CElogo.png`,
   stylesheets: [
     `https://kit.fontawesome.com/${process.env.FONT_AWESOME_KEY}.css`,
     'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500',
