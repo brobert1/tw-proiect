@@ -17,7 +17,7 @@ const Page = () => {
           </div>
           <div className="space-y-6">
             <LoginForm />
-            <p className="text-center text-sm text-text-secondary">
+            <p className="flex items-center justify-center gap-2 text-sm text-text-secondary">
               Don't have an account?
               <Link href="/signup" className="font-medium text-text-primary hover:underline">
                 Sign up
@@ -26,12 +26,13 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div className="hidden lg:flex flex-1 border-l border-border-primary bg-sidebar-bg relative overflow-hidden">
+      <div className="hidden lg:flex flex-1 relative overflow-hidden">
         <img
           src="/images/conference.jpg"
           alt="conference"
           className="absolute inset-0 h-full w-full object-cover"
         />
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent"></div>
       </div>
     </div>
   );
