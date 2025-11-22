@@ -2,7 +2,7 @@ import { useState } from 'react';
 import classNames from '@lib/classnames';
 import { BarChart3, Settings, Users, FileText } from 'lucide-react';
 
-const DashboardLayout = ({ conferenceTitle, children }) => {
+const DashboardLayout = ({ children }) => {
   const [activeTab, setActiveTab] = useState('overview');
 
   const tabs = [
@@ -15,7 +15,7 @@ const DashboardLayout = ({ conferenceTitle, children }) => {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-semibold text-text-primary">Manage: {conferenceTitle}</h1>
+        <h1 className="text-2xl font-semibold text-text-primary">Manage Conference</h1>
       </div>
       <div className="border-b border-border-primary">
         <nav className="flex gap-8">

@@ -12,7 +12,7 @@ const ConferencesGallery = ({ data, status }) => {
           <ConferenceCardSkeleton type="error" />
         </div>
       )}
-      {status === 'loading' && (
+      {status === 'pending' && (
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           <ConferenceCardSkeleton type="loading" />
           <ConferenceCardSkeleton type="loading" />

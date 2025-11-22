@@ -1,3 +1,4 @@
+export { default as ActionModal } from './ActionModal';
 export { default as AppHead } from './AppHead';
 export { default as AuthorMenu } from './AuthorMenu';
 export { default as Bone } from './Bone';
@@ -25,6 +26,7 @@ export { default as Profile } from './Profile';
 export { default as ProfileLoading } from './ProfileLoading';
 export { default as ProfileMenu } from './ProfileMenu';
 export { default as ProfileSuccess } from './ProfileSuccess';
+export { default as QueryError } from './QueryError';
 export { default as ReviewerMenu } from './ReviewerMenu';
 export { default as ScreenSizeInfo } from './ScreenSizeInfo';
 export { default as StepIndicator } from './StepIndicator';
