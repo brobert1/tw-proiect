@@ -11,3 +11,9 @@ export const updateConference = (id, data) => {
 export const deleteConference = (id) => {
   return axiosAuth.delete(`organizer/conferences/${id}`);
 };
+
+export const inviteReviewer = (id, data) =>
+  axiosAuth.post(`/organizer/conferences/${id}/invite-reviewer`, data);
+
+export const cancelReviewerInvitation = (conferenceId, invitationId) =>
+  axiosAuth.delete(`/organizer/conferences/${conferenceId}/reviewers/invitations/${invitationId}`);

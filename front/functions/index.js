@@ -9,5 +9,6 @@ export { default as getDaysUntil } from './get-days-until';
 export { default as isRequestCanceled } from './is-request-canceled';
 export { default as normalize } from './normalize';
 export { default as safeNumber } from './safe-number';
+export { default as time } from './time';
 export { default as translate } from './translate';
 export { default as whoami } from './whoami';

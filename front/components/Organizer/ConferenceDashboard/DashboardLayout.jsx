@@ -1,9 +1,34 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import classNames from '@lib/classnames';
 import { BarChart3, Settings, Users, FileText } from 'lucide-react';
+import { useRouter } from 'next/router';
 
 const DashboardLayout = ({ children }) => {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState('overview');
+
+  useEffect(() => {
+    // Extract hash from URL, remove the '#' character
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      setActiveTab(hash);
+    } else {
+      setActiveTab('overview');
+    }
+  }, [router.asPath]);
+
+  const handleTabChange = (tabId) => {
+    setActiveTab(tabId);
+    router.push(
+      {
+        pathname: router.pathname,
+        query: router.query,
+        hash: tabId,
+      },
+      undefined,
+      { shallow: true }
+    );
+  };
 
   const tabs = [
     { id: 'overview', label: 'Overview', icon: BarChart3 },
@@ -25,7 +50,7 @@ const DashboardLayout = ({ children }) => {
             return (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => handleTabChange(tab.id)}
                 className={classNames(
                   'group flex items-center gap-2 border-b-2 px-1 pb-4 text-sm font-medium transition-colors',
                   isActive

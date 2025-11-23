@@ -3,13 +3,19 @@ import { useTable } from '@hooks';
 import { isEmpty, size } from 'lodash';
 import { useMemo } from 'react';
 
-const TableSuccess = ({ name, columns, data }) => {
+const TableSuccess = ({ name, columns, data, meta }) => {
   const memoCols = useMemo(() => columns, [columns]);
-  const memoRows = useMemo(() => data?.pages ?? [], [data?.pages]);
+  const memoRows = useMemo(() => {
+    if (Array.isArray(data)) {
+      return data;
+    }
+    return data?.pages ?? [];
+  }, [data]);
 
   const table = useTable({
     columns: memoCols,
     data: memoRows,
+    meta,
   });
 
   const tableRows = table.getRowModel().rows;

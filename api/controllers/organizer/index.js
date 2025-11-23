@@ -1,6 +1,9 @@
+export { default as cancelReviewerInvitation } from './cancel-reviewer-invitation';
 export { default as createConference } from './create-conference';
+export { default as deleteConference } from './delete-conference';
 export { default as getConference } from './get-conference';
 export { default as getConferenceOverview } from './get-conference-overview';
+export { default as getConferenceReviewers } from './get-conference-reviewers';
+export { default as inviteReviewer } from './invite-reviewer';
 export { default as listConferences } from './list-conferences';
-export { default as deleteConference } from './delete-conference';
 export { default as updateConference } from './update-conference';

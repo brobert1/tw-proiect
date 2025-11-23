@@ -4,10 +4,10 @@ import { memo } from 'react';
 const TableRow = ({ row }) => {
   const cells = row.getVisibleCells();
   return (
-    <tr>
+    <tr className="border-b border-gray-50 hover:bg-gray-50/50">
       {cells.map((cell) => {
         return (
-          <td key={cell.id} className="group px-4 py-2">
+          <td key={cell.id} className="group whitespace-nowrap px-6 py-4 text-sm text-gray-700">
             {flexRender(cell.column.columnDef.cell, cell.getContext())}
           </td>
         );

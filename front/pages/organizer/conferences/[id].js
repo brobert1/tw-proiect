@@ -21,7 +21,7 @@ const Page = () => {
             case 'settings':
               return <SettingsTab conferenceId={id} />;
             case 'reviewers':
-              return <ReviewersTab />;
+              return <ReviewersTab conferenceId={id} />;
             case 'submissions':
               return <SubmissionsTab />;
             default:

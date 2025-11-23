@@ -1,7 +1,9 @@
 export { default as DashboardLayout } from './DashboardLayout';
 export { default as DateCard } from './DateCard';
+export { default as InviteReviewer } from './InviteReviewer';
 export { default as OverviewTab } from './OverviewTab';
 export { default as PaperDetailsModal } from './PaperDetailsModal';
+export { default as ReviewersOverview } from './ReviewersOverview';
 export { default as ReviewersTab } from './ReviewersTab';
 export { default as SettingsTab } from './SettingsTab';
 export { default as StatCard } from './StatCard';
