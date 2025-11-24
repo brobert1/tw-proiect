@@ -1,7 +1,6 @@
 import { classnames } from '@lib';
 import { flexRender } from '@tanstack/react-table';
 import { ArrowDown, ArrowUp, ArrowUpDown } from 'lucide-react';
-import { memo } from 'react';
 
 const TableHeader = ({ headers }) => {
   return (
@@ -36,4 +35,4 @@ const TableHeader = ({ headers }) => {
   );
 };
 
-export default memo(TableHeader);
+export default TableHeader;

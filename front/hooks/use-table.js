@@ -23,6 +23,8 @@ const useTable = (options = {}) => {
     data,
     getCoreRowModel: coreRowModel,
     getSortedRowModel: sortedRowModel,
+    enableSortingRemoval: false,
+    sortDescFirst: true,
     ...restOptions,
   });
 };
