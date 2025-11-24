@@ -1,4 +1,4 @@
-import { getCoreRowModel, useReactTable } from '@tanstack/react-table';
+import { getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
 
 /**
  * Custom hook that wraps useReactTable with sensible defaults
@@ -14,6 +14,7 @@ const useTable = (options = {}) => {
     columns,
     data = [],
     getCoreRowModel: coreRowModel = getCoreRowModel(),
+    getSortedRowModel: sortedRowModel = getSortedRowModel(),
     ...restOptions
   } = options;
 
@@ -21,6 +22,7 @@ const useTable = (options = {}) => {
     columns,
     data,
     getCoreRowModel: coreRowModel,
+    getSortedRowModel: sortedRowModel,
     ...restOptions,
   });
 };
