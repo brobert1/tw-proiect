@@ -60,13 +60,23 @@ export default async (req, res) => {
       reviewer = newReviewer;
     }
 
-    const invitationToken = randomHash() + randomHash();
+    const [invitation] = await trx('reviewer_invitations')
+      .insert({
+        conference_id: conference.id,
+        email: email,
+        status: 'pending',
+        created_at: knex.fn.now(),
+      })
+      .returning('id');
 
-    await trx('reviewer_invitations').insert({
-      conference_id: conference.id,
-      email: email,
-      invitation_token: invitationToken,
-      status: 'pending',
+    const invitationToken = randomHash() + randomHash();
+    const expiresAt = new Date();
+    expiresAt.setDate(expiresAt.getDate() + 7); // 7 days expiration
+
+    await trx('invitation_tokens').insert({
+      token: invitationToken,
+      invitation_id: invitation.id,
+      expires_at: expiresAt,
       created_at: knex.fn.now(),
     });
 
@@ -81,6 +91,7 @@ export default async (req, res) => {
           location: conference.location,
           date: conference.conference_date,
         },
+        token: invitationToken,
       });
     } catch (emailError) {
       console.error('Failed to send invitation email:', emailError);

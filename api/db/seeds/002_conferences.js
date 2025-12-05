@@ -23,7 +23,32 @@ export async function seed(knex) {
 
     // Insert reviewer invitations
     const invitationSeeds = reviewerInvitations(conference.id);
-    await knex('reviewer_invitations').insert(invitationSeeds);
+
+    // Separate tokens from invitations
+    const invitationsToInsert = invitationSeeds.map((seed) => {
+      // eslint-disable-next-line no-unused-vars
+      const { invitation_token, ...rest } = seed;
+      return rest;
+    });
+
+    const insertedInvitations = await knex('reviewer_invitations')
+      .insert(invitationsToInsert)
+      .returning(['id', 'email']);
+
+    // Insert tokens
+    const tokensToInsert = insertedInvitations.map((invitation) => {
+      const originalSeed = invitationSeeds.find((s) => s.email === invitation.email);
+      const expiresAt = new Date();
+      expiresAt.setDate(expiresAt.getDate() + 7); // 7 days expiration
+
+      return {
+        token: originalSeed.invitation_token,
+        invitation_id: invitation.id,
+        expires_at: expiresAt,
+      };
+    });
+
+    await knex('invitation_tokens').insert(tokensToInsert);
     console.log('✓ Reviewer invitations seeded');
 
     // Get the reviewer
@@ -49,7 +74,9 @@ export async function seed(knex) {
 
         // Insert paper reviewer assignment
         const paperReviewerSeeds = paperReviewers(insertedPapers[0].id, reviewer.id);
-        const [paperReviewer] = await knex('paper_reviewers').insert(paperReviewerSeeds).returning('*');
+        const [paperReviewer] = await knex('paper_reviewers')
+          .insert(paperReviewerSeeds)
+          .returning('*');
         console.log('✓ Paper reviewers seeded');
 
         // Insert review

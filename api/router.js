@@ -16,6 +16,8 @@ router.use(status.error);
 // Use the router instances defined
 router.use(routes.identity);
 router.use(routes.organizer);
+router.use(routes.public);
+router.use(routes.reviewer);
 // example routes removed — use the app's routes in `routes/`
 
 // Matches any other HTTP method and route not matched before

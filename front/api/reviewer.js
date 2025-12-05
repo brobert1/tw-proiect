@@ -1,3 +1,1 @@
-import { axiosAuth } from '@lib';
-
-// Reviewer-specific API calls will go here
+// Authenticated reviewer API calls will go here

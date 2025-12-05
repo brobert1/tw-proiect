@@ -1,7 +1,7 @@
 import { logger } from '@lib';
 import { sendEmail } from '@plugins/nodemailer';
 
-const sendReviewerInvitation = async ({ email, conference }) => {
+const sendReviewerInvitation = async ({ email, conference, token }) => {
   const templateData = {
     to: email,
     subject: `Invitation to become reviewer for ${conference.name}`,
@@ -12,7 +12,7 @@ const sendReviewerInvitation = async ({ email, conference }) => {
       conference_start_date: conference.date,
       conference_end_date: conference.date,
       conference_location: conference.location,
-      url: `${process.env.APP_BASE_URL}/reviewer`,
+      url: `${process.env.APP_BASE_URL}/reviewer/${token}`,
     },
   };
 
