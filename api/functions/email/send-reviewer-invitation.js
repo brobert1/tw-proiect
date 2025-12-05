@@ -12,7 +12,7 @@ const sendReviewerInvitation = async ({ email, conference, token }) => {
       conference_start_date: conference.date,
       conference_end_date: conference.date,
       conference_location: conference.location,
-      url: `${process.env.APP_BASE_URL}/reviewer/${token}`,
+      url: `${process.env.APP_BASE_URL}/reviewer-invitation/${token}`,
     },
   };
 

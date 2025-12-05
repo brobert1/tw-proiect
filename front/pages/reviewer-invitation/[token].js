@@ -15,7 +15,7 @@ const Page = () => {
       if (next === 'login') {
         r.push('/login').catch(() => {});
       } else {
-        r.push(`/reviewer/setup/${token}`).catch(() => {});
+        r.push(`/reviewer-invitation/setup/${token}`).catch(() => {});
       }
     },
   });
@@ -25,7 +25,7 @@ const Page = () => {
   });
 
   if (invitation?.status === 'accepted') {
-    r.replace(`/reviewer/setup/${token}`).catch(() => {});
+    r.replace(`/reviewer-invitation/setup/${token}`).catch(() => {});
     return null;
   }
 
