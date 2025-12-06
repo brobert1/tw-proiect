@@ -1,11 +1,15 @@
-import { Button } from '@components';
-import { MoreHorizontal } from 'lucide-react';
+import { Link } from '@components';
 
-const ReviewerConferenceActionsCell = () => {
+const ReviewerConferenceActionsCell = ({ row }) => {
+  const conferenceId = row.original.id;
+
   return (
-    <Button className="rounded-md border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-600 hover:bg-gray-50">
-      <MoreHorizontal className="h-4 w-4" />
-    </Button>
+    <Link
+      href={`/reviewer/conferences/${conferenceId}`}
+      className="inline-flex items-center rounded-md border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-blue-600 hover:bg-blue-50 hover:text-blue-700"
+    >
+      Manage
+    </Link>
   );
 };
 
