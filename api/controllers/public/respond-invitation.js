@@ -26,7 +26,7 @@ export default async (req, res) => {
     }
 
     const invitation = await trx('reviewer_invitations')
-      .first('id', 'email', 'status')
+      .first('id', 'email', 'status', 'conference_id')
       .where('id', '=', tokenRecord.invitation_id)
       .forUpdate();
 
@@ -62,11 +62,16 @@ export default async (req, res) => {
       // Accepted flow
       const next = identity?.last_login_at ? 'login' : 'set_password';
 
-      // If going to login, we are done with the token
+      // If going to login, add to conference_reviewers now and clean up token
       if (next === 'login') {
+        await trx('conference_reviewers').insert({
+          user_id: identity.id,
+          conference_id: invitation.conference_id,
+          created_at: knex.fn.now(),
+        });
         await trx('invitation_tokens').where('id', '=', tokenRecord.id).del();
       }
-      // If going to set_password, keep token alive for that step
+      // If going to set_password, keep token alive for that step (insertion happens there)
 
       await trx.commit();
       return res.status(200).json({ next, message: 'Invitation accepted' });

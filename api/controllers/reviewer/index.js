@@ -1,1 +1,1 @@
-// Authenticated reviewer controllers will be exported here
+export { default as listConferences } from './list-conferences';

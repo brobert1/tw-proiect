@@ -1,11 +1,14 @@
 import { store } from '@auth';
 import { extractError } from '@functions';
-import { axios, router, toaster } from '@lib';
+import { axios, queryClient, router, toaster } from '@lib';
 
 const logout = async () => {
   try {
     await axios.post('logout');
     store.dispatch({ type: 'REMOVE' });
+
+    // Clear React Query cache to prevent stale data from previous user
+    queryClient.clear();
 
     // Notify user and other actions
     toaster.success('Logout successful');

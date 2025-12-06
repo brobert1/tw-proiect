@@ -28,7 +28,7 @@ export default async (req, res) => {
     }
 
     const invitation = await trx('reviewer_invitations')
-      .first('email', 'status')
+      .first('email', 'status', 'conference_id')
       .where('id', '=', tokenRecord.invitation_id);
 
     if (!invitation) {
@@ -46,6 +46,13 @@ export default async (req, res) => {
     await trx('identities')
       .update({ password: hashedPassword, active: true, updated_at: knex.fn.now() })
       .where('id', '=', identity.id);
+
+    // Add the reviewer to the conference
+    await trx('conference_reviewers').insert({
+      user_id: identity.id,
+      conference_id: invitation.conference_id,
+      created_at: knex.fn.now(),
+    });
 
     await trx('invitation_tokens').where('id', '=', tokenRecord.id).del();
 
