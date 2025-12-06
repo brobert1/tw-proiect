@@ -1,4 +1,5 @@
 import { Menu, MenuButton } from '@components';
+import siteConfig from '@site.config';
 import { ChevronRight } from 'lucide-react';
 
 const Layout = ({ title, children }) => {
@@ -8,7 +9,7 @@ const Layout = ({ title, children }) => {
       <main className="ml-0 w-full lg:ml-[280px] lg:w-[calc(100%-280px)]">
         <header className="flex min-h-16 items-center border-b border-border-primary px-6 py-4">
           <nav className="hidden flex-1 items-center gap-2 md:flex">
-            <span className="text-sm text-text-secondary">Building Your Application</span>
+            <span className="text-sm text-text-secondary">{siteConfig.sitename}</span>
             <ChevronRight className="h-3 w-3 text-text-tertiary" strokeWidth={2} />
             <span className="text-sm font-medium text-text-primary">{title}</span>
           </nav>

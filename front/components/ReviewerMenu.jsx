@@ -1,7 +1,7 @@
 import { MenuItem } from '@components';
 import {
   LayoutDashboard,
-  Inbox,
+  Building2,
   FileSearch,
   MessageSquare,
   CheckSquare,
@@ -19,8 +19,8 @@ const ReviewerMenu = () => {
           <MenuItem href="/reviewer" icon={LayoutDashboard} level="1">
             Dashboard
           </MenuItem>
-          <MenuItem href="/reviewer/invitations" icon={Inbox} level="1">
-            Review Invitations
+          <MenuItem href="/reviewer/conferences" icon={Building2} level="1">
+            My Conferences
           </MenuItem>
           <MenuItem href="/reviewer/assigned" icon={FileSearch} level="1">
             Assigned Papers
