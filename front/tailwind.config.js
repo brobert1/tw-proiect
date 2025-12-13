@@ -61,7 +61,30 @@ module.exports = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		keyframes: {
+			blob: {
+				'0%': {
+					transform: 'translate(0px, 0px) scale(1)'
+				},
+				'33%': {
+					transform: 'translate(30px, -50px) scale(1.1)'
+				},
+				'66%': {
+					transform: 'translate(-20px, 20px) scale(0.9)'
+				},
+				'100%': {
+					transform: 'translate(0px, 0px) scale(1)'
+				}
+			}
+		},
+		animation: {
+			blob: 'blob 7s infinite'
+		},
+		animationDelay: {
+			2000: '2s',
+			4000: '4s'
+		}
   	}
   },
   content: [
@@ -72,6 +95,17 @@ module.exports = {
     require('@tailwindcss/forms')({
       strategy: 'class',
     }),
-    require('@tailwindcss/typography')
-],
+    require('@tailwindcss/typography'),
+    // Custom plugin for animation-delay
+    function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'animation-delay': (value) => ({
+            'animation-delay': value,
+          }),
+        },
+        { values: theme('animationDelay') }
+      );
+    },
+  ],
 };
