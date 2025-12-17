@@ -11,3 +11,6 @@ router.get('/public/conferences', Public.listConferences);
 router.get('/public/reviewer-invitation/:token', Public.getInvitation);
 router.post('/public/reviewer-invitation/:token/respond', Public.respondInvitation);
 router.post('/public/reviewer-invitation/:token/set-password', Public.setPassword);
+
+// Email Verification Routes
+router.get('/public/verify-email/:token', Public.verifyEmail);
