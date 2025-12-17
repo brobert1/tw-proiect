@@ -5,6 +5,7 @@ const signup = async (data) => {
   try {
     await axios.post('signup', data);
 
+    sessionStorage.setItem('justSignedUp', 'true');
     router.push('/thank-you');
   } catch (err) {
     const { message } = extractError(err);

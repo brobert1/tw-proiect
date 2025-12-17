@@ -1,7 +1,26 @@
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import { Link } from '@components';
 import { Mail, ArrowLeft } from 'lucide-react';
 
 const Page = () => {
+  const router = useRouter();
+  const [isValid, setIsValid] = useState(false);
+
+  useEffect(() => {
+    const justSignedUp = sessionStorage.getItem('justSignedUp');
+    if (!justSignedUp) {
+      router.replace('/');
+    } else {
+      sessionStorage.removeItem('justSignedUp');
+      setIsValid(true);
+    }
+  }, [router]);
+
+  if (!isValid) {
+    return null;
+  }
+
   return (
     <div className="flex min-h-screen">
       <div className="hidden lg:flex flex-1 relative overflow-hidden">
