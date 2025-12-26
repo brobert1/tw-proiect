@@ -5,5 +5,9 @@ export default function (query) {
     filter.name = query.name;
   }
 
+  if (query.topic && query.topic !== '' && query.topic !== 'all') {
+    filter.topic = query.topic;
+  }
+
   return filter;
 }

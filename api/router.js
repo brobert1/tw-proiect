@@ -14,6 +14,7 @@ router.use(status.loading);
 router.use(status.error);
 
 // Use the router instances defined
+router.use(routes.author);
 router.use(routes.identity);
 router.use(routes.organizer);
 router.use(routes.public);
