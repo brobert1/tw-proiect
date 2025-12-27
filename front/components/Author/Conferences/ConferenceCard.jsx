@@ -56,15 +56,12 @@ const ConferenceCard = ({ conference }) => {
           </div>
         </div>
         <Link
-          href={isSubmittable ? `/author/submit?conferenceId=${conference.id}` : '#'}
+          href={`/author/conferences/${conference.id}`}
           className={classnames(
             'flex h-10 w-10 items-center justify-center rounded-full border shadow-sm transition-all duration-300 group-hover:scale-110',
-            isSubmittable
-              ? 'border-gray-200 bg-white group-hover:border-gray-900 group-hover:bg-gray-900 group-hover:text-white'
-              : 'border-gray-100 bg-gray-50 text-gray-300 cursor-not-allowed'
+            'border-gray-200 bg-white group-hover:border-gray-900 group-hover:bg-gray-900 group-hover:text-white'
           )}
-          title={isSubmittable ? 'Submit Paper' : 'Submissions Closed'}
-          onClick={(e) => !isSubmittable && e.preventDefault()}
+          title="View Conference"
         >
           <ArrowRight className="h-4 w-4" />
         </Link>

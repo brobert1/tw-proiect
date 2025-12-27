@@ -11,3 +11,7 @@ router.all('/author/*', authenticate, authorize('author'));
 
 // Author conferences
 router.get('/author/conferences', Author.listConferences);
+router.get('/author/conferences/:id', Author.getConference);
+
+// Author papers
+router.post('/author/papers', Author.submitPaper);
