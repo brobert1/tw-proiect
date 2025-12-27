@@ -1,3 +1,4 @@
+export { default as AssignedPapersTable } from './AssignedPapersTable';
 export { default as ConferenceDashboard } from './ConferenceDashboard';
 export { default as ConferenceHeader } from './ConferenceHeader';
 export { default as ConferenceInfo } from './ConferenceInfo';

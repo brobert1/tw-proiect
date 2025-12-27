@@ -22,7 +22,7 @@ const ReviewerMenu = () => {
           <MenuItem href="/reviewer/conferences" icon={Building2} level="1">
             My Conferences
           </MenuItem>
-          <MenuItem href="/reviewer/assigned" icon={FileSearch} level="1">
+          <MenuItem href="/reviewer/assigned-papers" icon={FileSearch} level="1">
             Assigned Papers
           </MenuItem>
           <MenuItem href="/reviewer/reviews" icon={MessageSquare} level="1">
