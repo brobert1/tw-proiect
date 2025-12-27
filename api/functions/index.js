@@ -1,4 +1,6 @@
+export { default as allocateReviewersForConference } from './allocate-reviewers-for-conference';
 export { default as attachPaginate } from './paginate';
+export { default as calculateTopicScore } from './calculate-topic-score';
 export { default as coffee } from './coffee';
 export { default as createCron } from './create-cron';
 export { default as error } from './error';

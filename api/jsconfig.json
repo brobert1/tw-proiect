@@ -4,6 +4,8 @@
     "paths": {
       "@controllers": ["./controllers/index.js"],
       "@controllers/*": ["./controllers/*"],
+      "@crons": ["./cron/index.js"],
+      "@crons/*": ["./cron/*"],
       "@db": ["./db/index.js"],
       "@db/*": ["./db/*"],
       "@functions": ["./functions/index.js"],
