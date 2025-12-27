@@ -17,3 +17,8 @@ export const inviteReviewer = (id, data) =>
 
 export const cancelReviewerInvitation = (conferenceId, invitationId) =>
   axiosAuth.delete(`/organizer/conferences/${conferenceId}/reviewers/invitations/${invitationId}`);
+
+export const assignPaperReviewer = (conferenceId, paperId, reviewerId) =>
+  axiosAuth.post(`/organizer/conferences/${conferenceId}/papers/${paperId}/reviewers`, {
+    reviewerId,
+  });

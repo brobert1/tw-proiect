@@ -23,7 +23,7 @@ const Page = () => {
             case 'reviewers':
               return <ReviewersTab conferenceId={id} />;
             case 'submissions':
-              return <SubmissionsTab />;
+              return <SubmissionsTab conferenceId={id} />;
             default:
               return <OverviewTab conferenceId={id} />;
           }
