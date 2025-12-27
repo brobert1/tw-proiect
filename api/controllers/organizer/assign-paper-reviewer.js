@@ -54,7 +54,7 @@ export default async (req, res) => {
     .insert({
       paper_id: paperId,
       user_id: reviewerId,
-      assignment_status: 'pending',
+      assignment_status: 'accepted',
       created_at: knex.fn.now(),
     })
     .returning('*');

@@ -75,7 +75,7 @@ export default async function allocateReviewersForConference(conferenceId) {
     const assignments = selectedReviewers.map((reviewer) => ({
       paper_id: paper.id,
       user_id: reviewer.userId,
-      assignment_status: 'pending',
+      assignment_status: 'accepted',
       created_at: knex.fn.now(),
     }));
 
