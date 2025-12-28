@@ -6,6 +6,7 @@
     "build": "node npm.js build",
     "dev": "node npm.js dev",
     "seed": "node npm.js seed",
+    "seed:pdfs": "node scripts/seed-pdfs.js",
     "start": "node npm.js build && node npm.js start",
     "test": "node npm.js test"
   },
