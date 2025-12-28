@@ -1,0 +1,25 @@
+name: tw-proiect
+services:
+  - name: backend
+    source_dir: api
+    github:
+      repo: brobert1/tw-proiect
+      branch: main
+      deploy_on_push: true
+    run_command: npm start # or whatever your start script is
+    environment_slug: node-js
+    http_port: 8080 # or your port
+    routes:
+      - path: /api
+
+  - name: frontend
+    source_dir: front
+    github:
+      repo: brobert1/tw-proiect
+      branch: main
+      deploy_on_push: true
+    build_command: npm run build
+    environment_slug: node-js # or static if exportable
+    static_site: true # if you use next export; otherwise false
+    routes:
+      - path: /
