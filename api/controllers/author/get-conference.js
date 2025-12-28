@@ -41,10 +41,22 @@ export default async (req, res) => {
       .where('paper_id', '=', paper.id)
       .orderBy('version_number', 'desc');
 
+    const reviews = await knex('reviews')
+      .select(
+        'reviews.id',
+        'reviews.recommendation',
+        'reviews.feedback_for_author',
+        'reviews.submitted_at'
+      )
+      .leftJoin('paper_reviewers', 'reviews.paper_reviewer_id', 'paper_reviewers.id')
+      .where('paper_reviewers.paper_id', '=', paper.id)
+      .orderBy('reviews.submitted_at', 'desc');
+
     paperWithVersion = {
       ...paper,
       file_url: latestVersion?.file_url || null,
       version: latestVersion?.version_number || null,
+      reviews,
     };
   }
 
