@@ -9,7 +9,7 @@ import {
   SubmittedPaperSection,
 } from '.';
 
-const ConferenceDashboard = ({ data, status, onSubmitPaper, isSubmitting }) => {
+const ConferenceDashboard = ({ data, status, refetch, onSubmitPaper, isSubmitting }) => {
   const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
   const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
 
@@ -18,6 +18,11 @@ const ConferenceDashboard = ({ data, status, onSubmitPaper, isSubmitting }) => {
       await onSubmitPaper(formData);
       setIsSubmitModalOpen(false);
     }
+  };
+
+  const handleDetailsClose = () => {
+    setIsDetailsModalOpen(false);
+    refetch?.();
   };
 
   return (
@@ -57,7 +62,7 @@ const ConferenceDashboard = ({ data, status, onSubmitPaper, isSubmitting }) => {
       />
       <PaperDetailsModal
         open={isDetailsModalOpen}
-        onClose={() => setIsDetailsModalOpen(false)}
+        onClose={handleDetailsClose}
         paper={data?.paper}
       />
     </>

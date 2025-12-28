@@ -30,5 +30,6 @@ app.use(router);
 // Cron jobs (auto-start on import)
 import '@crons/update-conference-statuses';
 import '@crons/allocate-reviewers';
+import '@crons/notify-final-upload';
 
 export default app;

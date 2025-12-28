@@ -20,6 +20,7 @@ router.get('/organizer/conferences/:id/papers/:paperId/reviewers', Organizer.get
 router.get('/organizer/conferences/:id/papers/:paperId/reviews', Organizer.getPaperReviews);
 router.post('/organizer/conferences/:id/papers/:paperId/reviewers', Organizer.assignPaperReviewer);
 router.post('/organizer/conferences/:id/invite-reviewer', Organizer.inviteReviewer);
+router.put('/organizer/conferences/:id/papers/:paperId/decision', Organizer.updatePaperDecision);
 router.delete(
   '/organizer/conferences/:id/reviewers/invitations/:invitationId',
   Organizer.cancelReviewerInvitation

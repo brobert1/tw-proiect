@@ -28,7 +28,13 @@ const ManageSubmissionModal = ({
               submissionDeadline={submissionDeadline}
             />
             <SubmittedReviewsSection conferenceId={conferenceId} paperId={paper.id} />
-            <FinalDecisionSection reviewDeadline={reviewDeadline} />
+            <FinalDecisionSection
+              conferenceId={conferenceId}
+              paperId={paper.id}
+              paperStatus={paper.status}
+              reviewDeadline={reviewDeadline}
+              onClose={onClose}
+            />
           </div>
         </div>
       </div>

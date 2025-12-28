@@ -15,3 +15,14 @@ export const submitPaper = async (conferenceId, formData) => {
     },
   });
 };
+
+export const uploadFinalVersion = async (paperId, file) => {
+  const data = new FormData();
+  data.append('file', file);
+
+  return await axiosAuth.put(`/author/papers/${paperId}/final`, data, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
+};

@@ -8,4 +8,5 @@ export { default as falsy } from './falsy';
 export { default as randomHash } from './random-hash';
 export { default as removeRefreshTokenCookie } from './remove-refresh-token-cookie';
 export { default as runScript } from './run-script';
+export { default as sendFinalUploadRequest } from './email/send-final-upload-request';
 export { uploadPdf } from './upload-pdf';

@@ -11,3 +11,4 @@ export { default as getPaperReviews } from './get-paper-reviews';
 export { default as inviteReviewer } from './invite-reviewer';
 export { default as listConferences } from './list-conferences';
 export { default as updateConference } from './update-conference';
+export { default as updatePaperDecision } from './update-paper-decision';

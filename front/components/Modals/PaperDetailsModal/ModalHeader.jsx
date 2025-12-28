@@ -4,6 +4,8 @@ import { FileText, X } from 'lucide-react';
 const STATUS_CONFIG = {
   submitted: { label: 'Submitted', color: 'text-blue-600', bg: 'bg-blue-50' },
   under_review: { label: 'Under Review', color: 'text-yellow-600', bg: 'bg-yellow-50' },
+  awaiting_final: { label: 'Awaiting Final Version', color: 'text-orange-600', bg: 'bg-orange-50' },
+  final_submitted: { label: 'Final Submitted', color: 'text-purple-600', bg: 'bg-purple-50' },
   accepted: { label: 'Accepted', color: 'text-green-600', bg: 'bg-green-50' },
   rejected: { label: 'Rejected', color: 'text-red-600', bg: 'bg-red-50' },
   revisions_required: { label: 'Revisions Required', color: 'text-orange-600', bg: 'bg-orange-50' },

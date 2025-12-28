@@ -2,6 +2,7 @@ import ModalHeader from './PaperDetailsModal/ModalHeader';
 import PaperInfoSection from './PaperDetailsModal/PaperInfoSection';
 import PdfPreviewSection from './PaperDetailsModal/PdfPreviewSection';
 import ReviewsCarousel from './PaperDetailsModal/ReviewsCarousel';
+import UploadFinalSection from './PaperDetailsModal/UploadFinalSection';
 
 const PaperDetailsModal = ({ open, onClose, paper }) => {
   if (!open || !paper) return null;
@@ -10,6 +11,7 @@ const PaperDetailsModal = ({ open, onClose, paper }) => {
   const coAuthors =
     typeof paper.co_authors === 'string' ? JSON.parse(paper.co_authors) : paper.co_authors || [];
   const reviews = paper.reviews || [];
+  const isAwaitingFinal = paper.status === 'awaiting_final';
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -22,7 +24,11 @@ const PaperDetailsModal = ({ open, onClose, paper }) => {
               <PaperInfoSection paper={paper} coAuthors={coAuthors} topics={topics} />
               {reviews.length > 0 && <ReviewsCarousel reviews={reviews} />}
             </div>
-            <PdfPreviewSection fileUrl={paper.file_url} />
+            {isAwaitingFinal ? (
+              <UploadFinalSection paperId={paper.id} onSuccess={onClose} />
+            ) : (
+              <PdfPreviewSection fileUrl={paper.file_url} />
+            )}
           </div>
         </div>
       </div>

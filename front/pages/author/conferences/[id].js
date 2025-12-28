@@ -26,6 +26,7 @@ const Page = () => {
       <ConferenceDashboard
         data={data}
         status={status}
+        refetch={refetch}
         onSubmitPaper={handleSubmitPaper}
         isSubmitting={mutation.isPending}
       />

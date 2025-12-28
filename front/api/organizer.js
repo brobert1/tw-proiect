@@ -22,3 +22,8 @@ export const assignPaperReviewer = (conferenceId, paperId, reviewerId) =>
   axiosAuth.post(`/organizer/conferences/${conferenceId}/papers/${paperId}/reviewers`, {
     reviewerId,
   });
+
+export const updatePaperDecision = (conferenceId, paperId, decision) =>
+  axiosAuth.put(`/organizer/conferences/${conferenceId}/papers/${paperId}/decision`, {
+    decision,
+  });

@@ -1,0 +1,83 @@
+<mjml>
+  <mj-head>
+    <mj-title>Upload Your Final Paper Version</mj-title>
+    <mj-font
+      name="Inter"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+    <mj-attributes>
+      <mj-all font-family="Inter, sans-serif" color="#333333" />
+      <mj-body background-color="#f4f4f7" />
+      <mj-wrapper background-color="#ffffff" border-radius="8px" padding="40px 30px" />
+      <mj-section padding="10px 0" />
+      <mj-text font-size="16px" line-height="1.6" />
+      <mj-button
+        background-color="#007bff"
+        color="#ffffff"
+        font-size="16px"
+        font-weight="bold"
+        border-radius="8px"
+        padding="15px 30px"
+      />
+      <mj-divider border-color="#eeeeee" border-width="1px" />
+    </mj-attributes>
+    <mj-style> a { color: #007bff; text-decoration: none; } </mj-style>
+  </mj-head>
+  <mj-body>
+    <mj-wrapper>
+      <mj-section padding-bottom="20px">
+        <mj-column>
+          <mj-divider />
+        </mj-column>
+      </mj-section>
+      <mj-section padding-bottom="10px">
+        <mj-column>
+          <mj-text font-size="24px" font-weight="bold" color="#111111" align="center">
+            Upload Your Final Paper Version
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section>
+        <mj-column>
+          <mj-text font-size="18px" padding-bottom="10px"> Hello, </mj-text>
+          <mj-text>
+            The review period for your paper <strong>"{{paper_title}}"</strong> submitted to
+            <strong>{{conference_name}}</strong> has concluded.
+          </mj-text>
+          <mj-text padding-top="10px">
+            Based on the reviewer feedback, please upload your final revised version of the paper.
+            This is an important step before the final decision can be made by the organizing
+            committee.
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section padding-top="20px" padding-bottom="20px">
+        <mj-column>
+          <mj-text align="center" padding-bottom="15px">
+            Click the button below to upload your final version:
+          </mj-text>
+
+          <mj-button href="{{url}}"> Upload Final Version </mj-button>
+        </mj-column>
+      </mj-section>
+      <mj-section>
+        <mj-column>
+          <mj-text> If you have any questions, please contact the conference organizers. </mj-text>
+
+          <mj-text padding-top="15px">
+            Best regards,<br />
+            The {{conference_name}} Organizing Committee
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section padding-top="30px">
+        <mj-column>
+          <mj-divider />
+          <mj-text align="center" font-size="12px" color="#999999" padding-top="20px">
+            You are receiving this email because you submitted a paper to {{conference_name}}.
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+  </mj-body>
+</mjml>
