@@ -1,11 +1,13 @@
 import { Eye } from 'lucide-react';
 
-const AssignedPaperActionsCell = ({ row }) => {
+const AssignedPaperActionsCell = ({ row, table }) => {
   const paper = row.original;
+  const { onReviewClick } = table.options.meta || {};
 
   const handleReview = () => {
-    // TODO: Implement review modal or navigation
-    console.log('Review paper:', paper);
+    if (onReviewClick) {
+      onReviewClick(paper);
+    }
   };
 
   return (

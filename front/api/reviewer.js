@@ -7,3 +7,7 @@ export const listConferences = () => {
 export const updateExpertise = (conferenceId, expertise_topics) => {
   return axiosAuth.put(`reviewer/conferences/${conferenceId}/expertise`, { expertise_topics });
 };
+
+export const submitReview = (assignmentId, reviewData) => {
+  return axiosAuth.post(`reviewer/assignments/${assignmentId}/reviews`, reviewData);
+};

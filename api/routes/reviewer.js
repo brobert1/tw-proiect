@@ -16,3 +16,4 @@ router.put('/reviewer/conferences/:id/expertise', Reviewer.updateExpertise);
 
 // Reviewer assigned papers
 router.get('/reviewer/assigned-papers', Reviewer.listAssignedPapers);
+router.post('/reviewer/assignments/:assignmentId/reviews', Reviewer.submitReview);

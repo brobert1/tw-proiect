@@ -1,7 +1,9 @@
 import { TableError, TableLoading, TableSuccess } from '@components/Tables';
 import { assignedPapersColumns } from '@data';
 
-const AssignedPapersTable = ({ data, status }) => {
+const AssignedPapersTable = ({ data, status, onReviewClick }) => {
+  const meta = { onReviewClick };
+
   return (
     <>
       {status === 'error' && <TableError name="assigned-papers" columns={assignedPapersColumns} />}
@@ -9,7 +11,12 @@ const AssignedPapersTable = ({ data, status }) => {
         <TableLoading name="assigned-papers" columns={assignedPapersColumns} />
       )}
       {status === 'success' && (
-        <TableSuccess columns={assignedPapersColumns} data={data} name="assigned-papers" />
+        <TableSuccess
+          columns={assignedPapersColumns}
+          data={data}
+          name="assigned-papers"
+          meta={meta}
+        />
       )}
     </>
   );

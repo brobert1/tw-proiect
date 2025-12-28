@@ -5,3 +5,4 @@ export { default as ConferenceInfo } from './ConferenceInfo';
 export { default as ConferenceSidebar } from './ConferenceSidebar';
 export { default as DateRow } from './DateRow';
 export { default as ReviewerConferencesTable } from './ReviewerConferencesTable';
+export { default as ReviewPaperModal } from './ReviewPaperModal';

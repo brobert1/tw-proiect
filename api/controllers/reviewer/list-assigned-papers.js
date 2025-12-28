@@ -7,6 +7,12 @@ export default async (req, res) => {
     throw error(401, 'Unauthorized');
   }
 
+  const latestVersionSubquery = knex('paper_versions')
+    .select('paper_id')
+    .max('version_number as max_version')
+    .groupBy('paper_id')
+    .as('latest_versions');
+
   const assignments = await knex('paper_reviewers')
     .select(
       'paper_reviewers.id as assignment_id',
@@ -19,10 +25,19 @@ export default async (req, res) => {
       'conferences.id as conference_id',
       'conferences.name as conference_name',
       'conferences.acronym as conference_acronym',
-      'conferences.review_deadline'
+      'conferences.review_deadline',
+      'paper_versions.file_url'
     )
     .leftJoin('papers', 'paper_reviewers.paper_id', 'papers.id')
     .leftJoin('conferences', 'papers.conference_id', 'conferences.id')
+    .leftJoin(latestVersionSubquery, 'papers.id', 'latest_versions.paper_id')
+    .leftJoin('paper_versions', function () {
+      this.on('papers.id', '=', 'paper_versions.paper_id').andOn(
+        'paper_versions.version_number',
+        '=',
+        'latest_versions.max_version'
+      );
+    })
     .where('paper_reviewers.user_id', '=', me)
     .whereIn('paper_reviewers.assignment_status', ['accepted', 'submitted'])
     .orderBy('conferences.review_deadline', 'asc')

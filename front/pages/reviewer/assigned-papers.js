@@ -1,10 +1,23 @@
 import { checkAuth, withAuth } from '@auth';
 import { Layout } from '@components';
-import { AssignedPapersTable } from '@components/Reviewer';
-import { useQuery } from '@hooks';
+import { AssignedPapersTable, ReviewPaperModal } from '@components/Reviewer';
+import { useDisclosure, useQuery } from '@hooks';
+import { useState } from 'react';
 
 const Page = () => {
-  const { data, status } = useQuery('reviewer/assigned-papers');
+  const { data, status } = useQuery('/reviewer/assigned-papers');
+  const { isOpen, show, hide } = useDisclosure();
+  const [selectedPaper, setSelectedPaper] = useState(null);
+
+  const handleReviewClick = (paper) => {
+    setSelectedPaper(paper);
+    show();
+  };
+
+  const handleCloseModal = () => {
+    hide();
+    setSelectedPaper(null);
+  };
 
   return (
     <Layout title="Assigned Papers">
@@ -17,9 +30,10 @@ const Page = () => {
           </p>
         </div>
         <div className="overflow-x-auto">
-          <AssignedPapersTable data={data} status={status} />
+          <AssignedPapersTable data={data} status={status} onReviewClick={handleReviewClick} />
         </div>
       </div>
+      <ReviewPaperModal open={isOpen} onClose={handleCloseModal} paper={selectedPaper} />
     </Layout>
   );
 };
