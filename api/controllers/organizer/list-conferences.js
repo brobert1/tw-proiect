@@ -31,6 +31,10 @@ export default async (req, res) => {
     query = query.where('name', 'ilike', `%${filter.name}%`);
   }
 
+  if (filter.status) {
+    query = query.where('status', '=', filter.status);
+  }
+
   const conferences = await query.orderBy('created_at', 'desc');
 
   return res.status(200).json(conferences);

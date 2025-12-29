@@ -18,7 +18,7 @@ export default async (req, res) => {
       'status',
       'created_at'
     )
-    .whereIn('status', ['upcoming', 'ongoing']);
+    .where('status', '=', 'upcoming');
 
   if (filter.name) {
     query = query.where(function () {

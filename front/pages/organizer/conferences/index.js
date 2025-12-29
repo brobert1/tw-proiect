@@ -2,10 +2,11 @@ import { checkAuth, withAuth } from '@auth';
 import { Button, Layout } from '@components';
 import { ConferencesGallery } from '@components/Organizer/Conferences';
 import { AddConferenceModal } from '@components/Modals';
-import { Plus, Search } from 'lucide-react';
+import { Archive, Plus, Search } from 'lucide-react';
 import { useState } from 'react';
 import { useDisclosure, useDebounce, useQuery } from '@hooks';
 import { Input } from '@components/Fields';
+import Link from 'next/link';
 
 const Page = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -16,6 +17,11 @@ const Page = () => {
     name: debouncedSearch,
   });
 
+  // Filter to show only upcoming and ongoing conferences
+  const activeConferences = data?.filter(
+    (conf) => conf.status === 'upcoming' || conf.status === 'ongoing'
+  );
+
   return (
     <Layout title="Conferences">
       <div className="flex items-start justify-between">
@@ -25,14 +31,23 @@ const Page = () => {
             Manage and monitor all your conferences
           </p>
         </div>
-        <Button
-          type="button"
-          onClick={show}
-          className="inline-flex items-center gap-2 rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
-        >
-          <Plus className="h-4 w-4" />
-          Add New Conference
-        </Button>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/organizer/conferences/past"
+            className="inline-flex items-center gap-2 rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+          >
+            <Archive className="h-4 w-4" />
+            Past Conferences
+          </Link>
+          <Button
+            type="button"
+            onClick={show}
+            className="inline-flex items-center gap-2 rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
+          >
+            <Plus className="h-4 w-4" />
+            Add New Conference
+          </Button>
+        </div>
       </div>
       <div className="mt-6 w-full max-w-md">
         <div className="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-3 py-2">
@@ -45,7 +60,7 @@ const Page = () => {
           />
         </div>
       </div>
-      <ConferencesGallery data={data} status={status} />
+      <ConferencesGallery data={activeConferences} status={status} />
       <AddConferenceModal open={isOpen} onClose={hide} refetch={refetch} />
     </Layout>
   );

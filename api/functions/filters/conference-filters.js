@@ -9,5 +9,9 @@ export default function (query) {
     filter.topic = query.topic;
   }
 
+  if (query.status && query.status !== '' && query.status !== 'all') {
+    filter.status = query.status;
+  }
+
   return filter;
 }
