@@ -1,12 +1,5 @@
 import { MenuItem } from '@components';
-import {
-  LayoutDashboard,
-  Building2,
-  FileSearch,
-  MessageSquare,
-  CheckSquare,
-  Calendar,
-} from 'lucide-react';
+import { LayoutDashboard, Building2, FileSearch } from 'lucide-react';
 
 const ReviewerMenu = () => {
   return (
@@ -24,22 +17,6 @@ const ReviewerMenu = () => {
           </MenuItem>
           <MenuItem href="/reviewer/assigned-papers" icon={FileSearch} level="1">
             Assigned Papers
-          </MenuItem>
-          <MenuItem href="/reviewer/reviews" icon={MessageSquare} level="1">
-            My Reviews
-          </MenuItem>
-        </nav>
-      </section>
-      <section>
-        <h3 className="mb-3 px-2 text-[10px] font-semibold uppercase tracking-wider text-text-secondary">
-          Activity
-        </h3>
-        <nav className="space-y-0.5">
-          <MenuItem href="/reviewer/completed" icon={CheckSquare} level="1">
-            Completed Reviews
-          </MenuItem>
-          <MenuItem href="/reviewer/deadlines" icon={Calendar} level="1">
-            Upcoming Deadlines
           </MenuItem>
         </nav>
       </section>
