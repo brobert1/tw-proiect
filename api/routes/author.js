@@ -14,5 +14,6 @@ router.get('/author/conferences', Author.listConferences);
 router.get('/author/conferences/:id', Author.getConference);
 
 // Author papers
+router.get('/author/submissions', Author.listSubmissions);
 router.post('/author/papers', Author.submitPaper);
 router.put('/author/papers/:paperId/final', Author.uploadFinalVersion);

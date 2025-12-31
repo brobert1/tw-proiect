@@ -1,4 +1,5 @@
 export { default as AssignedPaperActionsCell } from './AssignedPaperActionsCell';
+export { default as AuthorSubmissionActionsCell } from './AuthorSubmissionActionsCell';
 export { default as ExpertiseCell } from './ExpertiseCell';
 export { default as PaperStatusCell } from './PaperStatusCell';
 export { default as PendingActionsCell } from './PendingActionsCell';
