@@ -6,6 +6,7 @@ export { default as getConference } from './get-conference';
 export { default as getConferenceOverview } from './get-conference-overview';
 export { default as getConferenceReviewers } from './get-conference-reviewers';
 export { default as getConferenceSubmissions } from './get-conference-submissions';
+export { default as getDashboardStats } from './get-dashboard-stats';
 export { default as getPaperReviewers } from './get-paper-reviewers';
 export { default as getPaperReviews } from './get-paper-reviews';
 export { default as inviteReviewer } from './invite-reviewer';

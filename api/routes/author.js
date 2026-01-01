@@ -10,6 +10,7 @@ router.all('/author', authenticate, authorize('author'));
 router.all('/author/*', authenticate, authorize('author'));
 
 // Author conferences
+router.get('/author/dashboard', Author.getDashboardStats);
 router.get('/author/conferences', Author.listConferences);
 router.get('/author/conferences/:id', Author.getConference);
 
