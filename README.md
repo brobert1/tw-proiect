@@ -132,7 +132,7 @@ Serverul frontend va porni pe portul **3000**: `http://localhost:3000`
    npm run dev
    ```
 3. Deschide browser-ul la: `http://localhost:3000`
-4. Te poți conecta ca:
+4. Te poți conecta ca (vezi seed-uri):
 
    - **Organizer** (organizator)
    - **Reviewer** (evaluator)
