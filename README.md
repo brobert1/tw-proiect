@@ -1,5 +1,7 @@
 # TW Proiect
 
+🌐 ****Aplicație Live*:*** [https://confera-x6qwg.ondigitalocean.app/](https://confera-x6qwg.ondigitalocean.app/)
+
 Aplicație full-stack construită cu Node.js, Express, PostgreSQL și Next.js + React, cu suport pentru autentificare, Tailwind CSS și shadcn/ui.
 
 ## 📋 Cuprins
@@ -9,7 +11,6 @@ Aplicație full-stack construită cu Node.js, Express, PostgreSQL și Next.js + 
 - [Configurare Backend (API)](#configurare-backend-api)
 - [Configurare Frontend](#configurare-frontend)
 - [Rularea aplicației](#rularea-aplicației)
-
 
 ## 🔧 Cerințe de sistem
 
@@ -124,17 +125,15 @@ Serverul frontend va porni pe portul **3000**: `http://localhost:3000`
    cd api
    npm run dev
    ```
-
 2. **Terminal 2** - Pornește frontend-ul:
 
    ```bash
    cd front
    npm run dev
    ```
-
 3. Deschide browser-ul la: `http://localhost:3000`
-
 4. Te poți conecta ca:
+
    - **Organizer** (organizator)
    - **Reviewer** (evaluator)
    - **Author** (autor)
